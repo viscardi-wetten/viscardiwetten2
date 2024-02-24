@@ -21,6 +21,7 @@
     }
 
     .header {
+      flex-direction: column;
       align-items: center;
       padding: 20px;
       background-color:  #330329;
@@ -49,7 +50,7 @@
     border-radius: 8px;
       background-color: rgb(29, 28, 28);
       color: white;
-      padding: 8px 18px;
+      padding: 8px 14px;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
@@ -194,6 +195,7 @@
         display: none;
         position: fixed;
         bottom: 0; /* Startposition unten aus dem Bildschirm */
+        left: 50%;
         transform: translate(-50%, 100%); /* Startposition unten aus dem Bildschirm */
         padding: 20px;
         background-color: black;
@@ -206,7 +208,7 @@
         transition: transform 1.8s ease;
         margin-top: 40px;
         width: 100vw;
-        height: 120vh;
+        height: 100vh;
 }
     
 
@@ -418,10 +420,7 @@ html, body {
           .section:hover {
           border: 1.85px solid #af3496;
            }
-      #popup {
-        width: 100%;
-        margin: 0px;
-      }
+      
       .popupimg{
         max-width: 300px;
       }
