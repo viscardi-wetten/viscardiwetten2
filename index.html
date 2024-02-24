@@ -200,7 +200,7 @@
         left: 50%;
         transform: translate(-50%, 100%); /* Startposition unten aus dem Bildschirm */
         padding: 20px;
-        background-color: #1b1a1a;
+        background-color: black;
         border: 1.3px solid #242323; /* 1px dünner schwarzer Rahmen */
         border-radius: 26px;
         text-align: center;
@@ -264,7 +264,7 @@
      .popupimg {
       width: 100%;
       max-width: 250px; /* Reduziere die maximale Breite des Logos */
-      height: auto;     
+      height: auto;
      }
 
 .popuptext {
@@ -396,9 +396,9 @@ html, body {
     text-align: center;
   }
 
-  .header img {
-    width: 50%; /* Bild auf volle Breite einstellen */
+  .header img { 
     max-width: 200px; /* Maximale Breite für das Bild festlegen */
+    text-algin: center;
     height: auto; /* Bildhöhe automatisch anpassen */
     margin-bottom: 10px; /* Nach unten Platz für die Buttons */
   }
@@ -534,7 +534,7 @@ html, body {
 
       // Starte die Animation nach einer kurzen Verzögerung
       setTimeout(function() {
-        document.getElementById("popup").style.transform = "translate(-50%,15%)";
+        document.getElementById("popup").style.transform = "translate(-50%,8%)";
       }, 100);
     });
 
