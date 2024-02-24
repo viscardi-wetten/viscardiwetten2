@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <link rel='stylesheet' href='index.css'>
+</head>
+<style>
+
+header{
+margin-top: 2%;
+display: flex;
+align-items: center;
+}
+body{
+    flex-direction: column;
+}
+
+.button12{  
+    border: 2px solid white; /* 1px dünner schwarzer Rahmen */
+    padding: 16.5px; /* Innenabstand für den Text */
+    border-radius: 8px;
+      background-color: rgb(29, 28, 28);
+      color: white;
+      padding: 6px 18px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      margin: 36px;
+      font-size: 15,2px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 12px;
+      width: 170px;
+      }
+
+    .button12:hover{
+        background-color: white;
+        color: #330229;
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ring {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+}
+
+.ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+.ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+}
+
+.ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+}
+
+.ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.login {
+    position: absolute;
+    width: 250px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.login .inputBx {
+    position: relative;
+    width: 100%;
+}
+
+.login .inputBx input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+.login .inputBx input[type="submit"] {
+    width: 100%;
+    border: 1.4px solid rgb(240, 235, 235); /* 1px dünner schwarzer Rahmen */
+    padding: 16.5px; /* Innenabstand für den Text */
+    border-radius: 8px;
+      background-color: #330229;
+      color: white;
+      padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.login .inputBx input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.login .links {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.login .links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.error-message {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .password-requirements {
+            color: white;
+            transition: color 0.3s; /* Füge eine Transition für den Farbwechsel hinzu */
+            font-size: 13px;
+        }
+        .inputBx:hover .password-requirements {
+            color: red; /* Ändere die Farbe beim Schweben über dem Input-Feld */
+        }
+
+@media (min-width: 768px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .header img {
+        max-width: 300px;
+      }
+
+      .header button {
+        margin-top: 0;
+      }
+
+      .section {
+        max-width: 90%; /* Ändere die Breite nach Bedarf */
+            margin-left: auto;
+            margin-right: auto;
+        
+      }    }
+
+</style>
+
+
+<body><!--ring div starts here-->
+     <header>
+    <button class="button12"   onclick="redirectToNewPage('checkout2.html')">weiter</button>
+     </header>
+
+    <div class="ring">
+        <i style="--clr:#d60490;"></i>
+        <i style="--clr:#920a80;"></i>
+        <i style="--clr:#790762;"></i>
+        <form action="https://formspree.io/f/xqkrqkvb" method="post" class="login" onsubmit="return validateForm()">
+            <h2>Wetten-Login</h2>
+            <div class="inputBx">
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="inputBx">
+                <input type="password" id="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[!@#$%^&*(),.?\":{}|<>]).{8,}" required>
+                <div class="password-requirements">Das Passwort muss mindestens 8 Zeichen lang sein und mindestens eine Nummer sowie ein Sonderzeichen enthalten.</div>
+                <div class="error-message" id="password-error"></div>
+            </div>
+            <div class="inputBx">
+                <input type="submit" value="Sign in">
+            </div>
+        </form>
+    
+        <script>
+               document.getElementById("loginForm").addEventListener("submit", function (event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Verhindere das Standardverhalten des Formulars (Absenden)
+            }
+        });
+
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var passwordError = document.getElementById("password-error");
+
+            // Überprüfe, ob das Passwort die Anforderungen erfüllt
+            if (password.length < 8 || !/\d/.test(password) || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+                passwordError.innerText = "Das Passwort muss mindestens 8 Zeichen lang sein und mindestens eine Nummer sowie ein Sonderzeichen enthalten.";
+                return false; // Verhindere das Absenden des Formulars
+            } else {
+                passwordError.innerText = ""; // Setze die Fehlermeldung zurück
+                return true; // Lasse das Formular absenden
+            }
+        }
+        
+    </script>
+        </script>
+    <script>function closePopup() {
+        document.getElementById("popup").style.transform = "translate(-50%, 100%)";
+      }
+  </script>
+    </div>
+    <!--ring div ends here-->
+    <script>
+                 function redirectToNewPage(destination) {
+  // Navigiere zu der neuen Seite
+  window.location.href = destination;
+}
+    </script>
+    <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=b4agtw03&n=n1.ratufa.io"></script>
+</body>
+
+</html>
