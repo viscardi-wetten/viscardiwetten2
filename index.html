@@ -22,10 +22,9 @@
 
     .header {
       display: flex;
-      flex-direction: column;
       align-items: center;
       padding: 20px;
-      background-color:  #5b0448;
+      background-color:  #330329;
       color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -42,16 +41,14 @@
       font-weight: bold;
       text-align: center;
       text-decoration: none;
-      display: block;
+      display: flex;
       font-size: smaller;
-     
-      
     }
 .headerbutton {
   border: 2px solid white; /* 1px dünner schwarzer Rahmen */
     padding: 16.5px; /* Innenabstand für den Text */
     border-radius: 8px;
-      background-color: #5b0448;
+      background-color: rgb(29, 28, 28);
       color: white;
       padding: 8px 18px;
       font-weight: bold;
@@ -141,7 +138,7 @@
     .footer {
       text-align: center;
       padding: 20px;
-      background-color: #5b0448;
+      background-color: #330329;
       color: white;
     }
 
@@ -157,11 +154,11 @@
 
     .mail-button {
       border: 2px solid white; /* 1px dünner schwarzer Rahmen */
-    padding: 16.5px; /* Innenabstand für den Text */
+    padding: 15px; /* Innenabstand für den Text */
     border-radius: 8px;
       background-color: rgb(29, 28, 28);
       color: white;
-      padding: 6px 18px;
+      padding: 7px 12px;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
@@ -193,23 +190,28 @@
       height: 40px;
       width: 100%;
     }
-      
-#popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; /* 100% der Viewport-Breite */
-  height: 100vh; /* 100% der Viewport-Höhe */
-  padding: 20px;
-  background-color: #1b1a1a;
-  border: 1.3px solid #242323;
-  border-radius: 26px;
-  text-align: center;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  transition: transform 1.8s ease;
+
+    #popup {
+        display: none;
+        position: fixed;
+        bottom: 0; /* Startposition unten aus dem Bildschirm */
+        left: 50%;
+        transform: translate(-50%, 100%); /* Startposition unten aus dem Bildschirm */
+        padding: 20px;
+        background-color: #1b1a1a;
+        border: 1.3px solid #242323; /* 1px dünner schwarzer Rahmen */
+        border-radius: 26px;
+        text-align: center;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        width: 300px;
+        transition: transform 1.8s ease;
+        margin-top: 40px;
+        width: 100vw;
+        height: 100vh;
 }
+    
+
         .popupbutton{
           border: 2px solid white; /* 1px dünner schwarzer Rahmen */
     padding: 16.5px; /* Innenabstand für den Text */
@@ -258,8 +260,11 @@
      }
  
      .popupimg {
-      margin-top: 50px;
+      margin-top: 30px;
       margin: 30px;
+      width: 100%;
+      max-width: 250px; /* Reduziere die maximale Breite des Logos */
+      height: auto;     
      }
 
 .popuptext {
@@ -268,10 +273,9 @@
      }
 
   .allpopup {
-    border: 1.89px solid #af3496;
+    border: 1.89px solid #330229;
     border-radius: 26px;
     margin: 14px;
-    margin-top: 110px;
   }
 
 h5 {
@@ -446,15 +450,19 @@ html, body {
             <img src="Viscardi wetten.png" alt="Logo-viscardi-wetten">
             <button id="scrollButton" class="headerbutton">Zu den Wetten</button>
 <script>
+
   const scrollButton = document.getElementById("scrollButton");
 
   scrollButton.addEventListener("click", (event) => {
     event.preventDefault();
     const targetSection = document.querySelector("#sondersection");
-   targetSection.scrollIntoView({ block: "start", behavior: "smooth" });
+   targetSection.scrollIntoView({ block: "start", behavior: "smooth"});
    targetSection.scrollBy(0, -50);
+   targetSection.scrollIntoView({ behavior:"easyout" })
   });
-</script>
+
+</script>  
+
             <button class="headerbutton" onclick="redirectToNewPage('login1p2.html')" >Account <i class='fas fa-user-alt'></i></button>
             <button  class="headerbutton"  onclick="location.href=('idee.html');">Deine Ideen</button>
         </div>
@@ -582,7 +590,6 @@ html, body {
 
 </body>
 </html>
-
 
 
 
